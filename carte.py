@@ -43,17 +43,7 @@ class Deck:
         random.shuffle(self.cartes)
 
         
-    def carte_supérieure(self):
-        if self.cartes:
-            return self.cartes[-1]
-        else:
-            return None
 
-    def carte_inférieure(self):
-        if self.cartes:
-            return self.cartes[0]
-        else:
-            return None
 
 class Plateau:
     def __init__(self, deck):
@@ -113,7 +103,8 @@ class Plateau:
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
                 else:
-                    print('Réponse incorrecte.')
+                    print("Réponse incorrecte. comme tu sais pas ecrire connard tu recommences ET CE N'EST EN AUCUN CAS QUE J'AI LA FLEMME DE CODER CETTE ERREUR OK !")
+                    erreur = True
                     break
             if erreur:
                 self.cartes = self.cartes[:]
