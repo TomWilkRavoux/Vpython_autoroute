@@ -114,6 +114,8 @@ class Plateau:
                 break
 
 
+##coucou voici une moidof akzfzbkefbkzefbuzeefb
+
 paquet = Deck ()
 
 paquet.battre()
