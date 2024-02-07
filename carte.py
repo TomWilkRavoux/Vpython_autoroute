@@ -1,5 +1,6 @@
 import random
 
+
 class Carte:
     noms_valeurs = [None, 'as', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'valet', 'dame', 'roi']
     noms_couleurs = ['trèfle', 'carreau', 'cœur', 'pique']
@@ -43,7 +44,17 @@ class Deck:
         random.shuffle(self.cartes)
 
         
+    def carte_supérieure(self):
+        if self.cartes:
+            return self.cartes[-1]
+        else:
+            return None
 
+    def carte_inférieure(self):
+        if self.cartes:
+            return self.cartes[0]
+        else:
+            return None
 
 class Plateau:
     def __init__(self, deck):
@@ -70,65 +81,66 @@ class Plateau:
         while True:
             for carte in self.cartes:
                 carte_actuelle = carte
-                print("****************\n")
-                print(self.afficher_prise())
-                print("****************\n")
-                print(carte_actuelle)
-                print("****************\n")
+                for carte in self.cartes:
+                 print(carte, end='      ')
+                print()
+                print("****************")
+                print('La carte actuelle est : ',carte_actuelle)
+                print("****************")
+                
 
-                réponse = input('Plus ou moins ? ')
+                réponse = input('Plus, moins ou egal ? ')
+                print("****************")
 
-                if réponse == 'plus' or réponse == "+" or réponse == 'Plus':
+                if réponse == 'plus' or réponse == "+":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur < carte_pioche.valeur:
-                        print(carte_pioche)
-                        print('C\'est vrai !')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
+                        print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print(carte_pioche)
-                        print('C\'est faux !')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                        print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
-                elif réponse == 'moins' or réponse == "-" or réponse == 'Moins':
+                elif réponse == 'moins' or réponse == "-":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur > carte_pioche.valeur:
-                        print(carte_pioche)
-                        print('C\'est vrai !')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print(carte_pioche)
-                        print('C\'est faux !')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                        print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
                 elif réponse == 'egale' or réponse == '=':
-                    carte_pioche = self.deck.pop_carte()
-                    if carte_actuelle.valeur == carte_pioche.valeur:
-                        print(carte_pioche)
-                        print('C\'est vrai !')   
-                        self.deck.ajout_carte(carte_actuelle)
-                        self.deck.battre()
-                        self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
-                    else:
-                        erreur = True
-                        print(carte_pioche)
-                        print('C\'est faux')
-                        self.deck.ajout_carte(carte_actuelle)
-                        self.deck.battre()
-                        self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
+                        carte_pioche = self.deck.pop_carte()
+                        if carte_actuelle.valeur == carte_pioche.valeur:
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')   
+                            print("****************")
+                            self.deck.ajout_carte(carte_actuelle)
+                            self.deck.battre()
+                            self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
+                        else:
+                            erreur = True
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                            print("****************")
+                            self.deck.ajout_carte(carte_actuelle)
+                            self.deck.battre()
+                            self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break                            
                 else:
-                    print("Réponse incorrecte. comme tu sais pas ecrire connard tu recommences ET CE N'EST EN AUCUN CAS QUE J'AI LA FLEMME DE CODER CETTE ERREUR OK !")
-                    erreur = True
+                    print('Réponse incorrecte.')
                     break
             if erreur:
                 self.cartes = self.cartes[:]
@@ -137,8 +149,6 @@ class Plateau:
             else:
                 break
 
-
-##coucou voici une moidof akzfzbkefbkzefbuzeefb
 
 paquet = Deck ()
 
