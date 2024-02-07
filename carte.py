@@ -82,8 +82,11 @@ class Plateau:
             for carte in self.cartes:
                 carte_actuelle = carte
                 for carte in self.cartes:
-                 print(carte, end=' // ')
+                 print(carte, end='      ')
                 print()
+                print("****************\n")
+                print( 'carte piocher =', carte_pioche )
+                
 
                 réponse = input('Plus ou moins ? ')
 
