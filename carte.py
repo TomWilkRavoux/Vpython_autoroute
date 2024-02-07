@@ -81,11 +81,9 @@ class Plateau:
         while True:
             for carte in self.cartes:
                 carte_actuelle = carte
-                print("****************\n")
-                print(self.afficher_prise())
-                print("****************\n")
-                print(carte_actuelle)
-                print("****************\n")
+                for carte in self.cartes:
+                 print(carte, end=' // ')
+                print()
 
                 réponse = input('Plus ou moins ? ')
 
