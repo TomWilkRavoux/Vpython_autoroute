@@ -78,30 +78,54 @@ class Plateau:
 
                 réponse = input('Plus ou moins ? ')
 
-                if réponse == 'plus' or réponse == "+":
+                if réponse == 'plus' or réponse == "+" or réponse == 'Plus':
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur < carte_pioche.valeur:
                         print(carte_pioche)
                         print('C\'est vrai !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
                         print(carte_pioche)
                         print('C\'est faux !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
-                elif réponse == 'moins' or réponse == "-":
+                elif réponse == 'moins' or réponse == "-" or réponse == 'Moins':
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur > carte_pioche.valeur:
                         print(carte_pioche)
                         print('C\'est vrai !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
                         print(carte_pioche)
                         print('C\'est faux !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
+                elif réponse == 'egale' or réponse == '=':
+                    carte_pioche = self.deck.pop_carte()
+                    if carte_actuelle.valeur == carte_pioche.valeur:
+                        print(carte_pioche)
+                        print('C\'est vrai !')   
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
+                        self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
+                    else:
+                        erreur = True
+                        print(carte_pioche)
+                        print('C\'est faux')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
+                        self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
+                        break                            
                 else:
                     print("Réponse incorrecte. comme tu sais pas ecrire connard tu recommences ET CE N'EST EN AUCUN CAS QUE J'AI LA FLEMME DE CODER CETTE ERREUR OK !")
                     erreur = True
