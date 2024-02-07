@@ -95,14 +95,14 @@ class Plateau:
                 if réponse == 'plus' or réponse == "+":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur < carte_pioche.valeur:
-                        print('Carte piochée = ',carte_pioche, '      La réponse est bonne bien jouée chacal du bois pas tous mes respect')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
                         print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print('Carte piochée = ',carte_pioche, '       La réponse est faux dommage tu est nul bois pour oublier')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
                         print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
@@ -111,13 +111,13 @@ class Plateau:
                 elif réponse == 'moins' or réponse == "-":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur > carte_pioche.valeur:
-                        print('Carte piochée = ',carte_pioche, '      La réponse est bonne bien jouée chacal du bois pas tous mes respect')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print('Carte piochée = ',carte_pioche, '       La réponse est faux dommage tu est nul bois pour oublier')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
                         print("****************")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
@@ -126,14 +126,14 @@ class Plateau:
                 elif réponse == 'egale' or réponse == '=':
                         carte_pioche = self.deck.pop_carte()
                         if carte_actuelle.valeur == carte_pioche.valeur:
-                            print('Carte piochée = ',carte_pioche, '      La réponse est bonne bien jouée chacal du bois pas tous mes respect')   
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')   
                             print("****************")
                             self.deck.ajout_carte(carte_actuelle)
                             self.deck.battre()
                             self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         else:
                             erreur = True
-                            print('Carte piochée = ',carte_pioche, '       La réponse est faux dommage tu est nul bois pour oublier')
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
                             print("****************")
                             self.deck.ajout_carte(carte_actuelle)
                             self.deck.battre()
