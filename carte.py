@@ -99,11 +99,15 @@ class Plateau:
                     if carte_actuelle.valeur > carte_pioche.valeur:
                         print(carte_pioche)
                         print('C\'est vrai !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
                         print(carte_pioche)
                         print('C\'est faux !')
+                        self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break
                 elif réponse == 'egale' or réponse == '=':
@@ -112,12 +116,14 @@ class Plateau:
                         print(carte_pioche)
                         print('C\'est vrai !')   
                         self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
                         print(carte_pioche)
                         print('C\'est faux')
                         self.deck.ajout_carte(carte_actuelle)
+                        self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         break                            
                 else:
