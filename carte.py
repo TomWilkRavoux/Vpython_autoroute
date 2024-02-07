@@ -85,7 +85,7 @@ class Plateau:
                  print(carte, end='      ')
                 print()
                 print("****************\n")
-                print( 'carte piocher =', carte_pioche )
+                print( 'carte piochée =', carte_pioche )
                 
 
                 réponse = input('Plus ou moins ? ')
