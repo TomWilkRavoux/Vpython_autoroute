@@ -91,19 +91,22 @@ class Plateau:
 
                 réponse = input('Plus, moins ou egal ? ')
                 print("****************")
+                print("\n")
 
                 if réponse == 'plus' or réponse == "+":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur < carte_pioche.valeur:
-                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal tu bois pas tous mes respects')
                         print("****************")
+                        print("\n")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est fausse dommage tu es nul bois pour oublier')
                         print("****************")
+                        print("\n")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
@@ -111,14 +114,17 @@ class Plateau:
                 elif réponse == 'moins' or réponse == "-":
                     carte_pioche = self.deck.pop_carte()
                     if carte_actuelle.valeur > carte_pioche.valeur:
-                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal tu bois pas tous mes respects')
+                        print("****************")
+                        print("\n")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                     else:
                         erreur = True
-                        print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                        print('Carte piochée = ',carte_pioche, '\nLa réponse est fausse dommage tu es nul bois pour oublier')
                         print("****************")
+                        print("\n")
                         self.deck.ajout_carte(carte_actuelle)
                         self.deck.battre()
                         self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
@@ -126,15 +132,17 @@ class Plateau:
                 elif réponse == 'egale' or réponse == '=':
                         carte_pioche = self.deck.pop_carte()
                         if carte_actuelle.valeur == carte_pioche.valeur:
-                            print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal du bois pas tous mes respect')   
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est bonne bien jouée chacal tu bois pas tous mes respects')   
                             print("****************")
+                            print("\n")
                             self.deck.ajout_carte(carte_actuelle)
                             self.deck.battre()
                             self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
                         else:
                             erreur = True
-                            print('Carte piochée = ',carte_pioche, '\nLa réponse est faux dommage tu est nul bois pour oublier')
+                            print('Carte piochée = ',carte_pioche, '\nLa réponse est fausse dommage tu es nul bois pour oublier')
                             print("****************")
+                            print("\n")
                             self.deck.ajout_carte(carte_actuelle)
                             self.deck.battre()
                             self.cartes[self.cartes.index(carte_actuelle)] = carte_pioche
